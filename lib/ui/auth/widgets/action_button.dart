@@ -4,7 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/text_styles.dart';
 
 class ActionButton extends StatelessWidget {
-  const ActionButton({super.key, required this.text, required this.buttonColor, required this.textColor});
+  const ActionButton(
+      {super.key,
+      required this.text,
+      required this.buttonColor,
+      required this.textColor});
 
   final String text;
   final Color buttonColor;
@@ -13,7 +17,6 @@ class ActionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 24.w),
       padding: EdgeInsets.symmetric(vertical: 17.h),
       alignment: Alignment.center,
       decoration: BoxDecoration(
@@ -21,7 +24,7 @@ class ActionButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(14.r),
       ),
       child: Text(
-        'Join now',
+        text,
         style: TextStyles.buttonText.copyWith(color: textColor),
       ),
     );

@@ -1,24 +1,20 @@
 import 'package:fitness_app/constants/colors.dart';
 import 'package:fitness_app/constants/text_styles.dart';
 import 'package:fitness_app/generated/assets.dart';
+import 'package:fitness_app/ui/auth/sign_in.dart';
+import 'package:fitness_app/ui/auth/sign_up.dart';
 import 'package:fitness_app/ui/auth/widgets/action_button.dart';
+import 'package:fitness_app/ui/auth/widgets/page_indicator.dart';
 import 'package:fitness_app/ui/auth/widgets/page_view_item.dart';
 import 'package:fitness_app/utils/extensions.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class Entrance extends StatefulWidget {
-  const Entrance({super.key});
+class Entrance extends StatelessWidget {
+  Entrance({super.key});
 
-  @override
-  State<Entrance> createState() => _EntranceState();
-}
-
-class _EntranceState extends State<Entrance> {
   final controller = PageController();
-
-  int pageIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -28,12 +24,13 @@ class _EntranceState extends State<Entrance> {
         width: 375.w,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                AppColors.mainBlue,
-                Color(0xff1268CC),
-              ]),
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              AppColors.blue500,
+              Color(0xff1268CC),
+            ],
+          ),
         ),
         child: Column(
           children: [
@@ -41,6 +38,7 @@ class _EntranceState extends State<Entrance> {
               height: 580.h,
               width: 375.w,
               child: PageView(
+                controller: controller,
                 children: const [
                   PageViewItem(
                     imageLink: Assets.imagesGridImages1,
@@ -67,24 +65,23 @@ class _EntranceState extends State<Entrance> {
                         "Sweat, Smile, Conquer: Make Sports Your Journey to Greatness.",
                   ),
                 ],
-                onPageChanged: (value) => setState(() => pageIndex = value),
               ),
             ),
             14.height,
-            AnimatedSmoothIndicator(
-              activeIndex: pageIndex,
-              count: 4,
-              effect: WormEffect(
-                  activeDotColor: AppColors.white,
-                  dotColor: const Color(0xffD1E6FF),
-                  dotHeight: 10.h,
-                  dotWidth: 10.w),
-            ),
+            PageIndicator(controller: controller, count: 4),
             40.height,
-            const ActionButton(
-              text: 'Join now',
-              buttonColor: AppColors.white,
-              textColor: AppColors.mainBlue,
+            GestureDetector(
+              onTap: () => Navigator.of(context).push(
+                CupertinoPageRoute(builder: (context) => SignUp()),
+              ),
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                child: const ActionButton(
+                  text: 'Join now',
+                  buttonColor: AppColors.white,
+                  textColor: AppColors.blue500,
+                ),
+              ),
             ),
             8.height,
             Row(
@@ -93,14 +90,16 @@ class _EntranceState extends State<Entrance> {
                 Text(
                   'Already a member? ',
                   style:
-                      TextStyles.buttonText.copyWith(color: AppColors.white2),
+                      TextStyles.buttonText.copyWith(color: AppColors.grey100),
                 ),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () => Navigator.of(context).push(
+                    CupertinoPageRoute(builder: (context) => SignIn()),
+                  ),
                   child: Text(
                     'Log in',
-                    style:
-                        TextStyles.buttonText.copyWith(color: AppColors.white2),
+                    style: TextStyles.buttonText
+                        .copyWith(color: AppColors.grey100),
                   ),
                 ),
               ],
