@@ -1,13 +1,19 @@
-import 'package:fitness_app/constants/colors.dart';
-import 'package:fitness_app/constants/text_styles.dart';
-import 'package:fitness_app/generated/assets.dart';
-import 'package:fitness_app/ui/home/widgets/see_reports.dart';
-import 'package:fitness_app/ui/home/widgets/today_item.dart';
-import 'package:fitness_app/utils/extensions.dart';
+import 'package:fitness_app/ui/home/challenges.dart';
+import 'package:fitness_app/ui/home/goals.dart';
+import 'package:fitness_app/ui/home/nutritions.dart';
+import 'package:fitness_app/ui/home/reports.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../constants/colors.dart';
+import '../../constants/text_styles.dart';
+import '../../generated/assets.dart';
+import '/utils/extensions.dart';
+import 'widgets/dashboard_item.dart';
 import 'widgets/habit_item.dart';
+import 'widgets/see_reports.dart';
+import 'widgets/today_item.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -18,11 +24,98 @@ class HomePage extends StatelessWidget {
       backgroundColor: const Color(0xff010101),
       body: Column(
         children: [
-          Image.asset(
-            Assets.imagesHomeHeader,
+          Container(
             height: 246.h,
+            padding: EdgeInsets.symmetric(horizontal: 24.w),
             width: double.infinity,
-            fit: BoxFit.cover,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(Assets.imagesHomeHeader),
+                fit: BoxFit.cover,
+              ),
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Row(
+                  children: [
+                    Image.asset(Assets.imagesThomas, height: 42.h),
+                    12.width,
+                    RichText(
+                      text: const TextSpan(
+                        text: 'Hello,\n',
+                        children: [
+                          TextSpan(text: 'Thomas'),
+                        ],
+                      ),
+                    ),
+                    const Spacer(),
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(Icons.search, color: AppColors.white),
+                    ),
+                    12.width,
+                    Container(
+                      height: 19.h,
+                      width: 1.w,
+                      color: AppColors.white,
+                    ),
+                    12.width,
+                    SvgPicture.asset(
+                      Assets.iconsMenu,
+                      width: 24.w,
+                      height: 24.h,
+                    )
+                  ],
+                ),
+                20.height,
+
+                ///Dashboard ---------------------------------
+                Container(
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+                  decoration: BoxDecoration(
+                      color: const Color(0xff40464D).withOpacity(0.6),
+                      borderRadius: BorderRadius.circular(20.r)),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const DashboardItem(
+                        title: 'Weight',
+                        amount: '56.5',
+                        iconLink: Assets.iconsWeight,
+                        iconColor: AppColors.yellow500,
+                        unit: '  kg',
+                      ),
+                      Container(
+                        height: 50.h,
+                        width: 1.w,
+                        color: AppColors.white.withOpacity(0.2),
+                      ),
+                      const DashboardItem(
+                        title: 'Step',
+                        amount: '1428',
+                        iconLink: Assets.iconsStep,
+                        iconColor: AppColors.green500,
+                        unit: '  step',
+                      ),
+                      Container(
+                        height: 50.h,
+                        width: 1.w,
+                        color: AppColors.white.withOpacity(0.2),
+                      ),
+                      const DashboardItem(
+                        title: 'Heart Rate',
+                        amount: '80',
+                        iconLink: Assets.iconsHeartbeat,
+                        iconColor: AppColors.red300,
+                        unit: '  Bpm',
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
           ),
           Expanded(
             child: Container(
@@ -38,6 +131,8 @@ class HomePage extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   const SizedBox(width: double.infinity),
+
+                  /// WHAT ARE YOU UP TODAY? ------------------------------------
                   Padding(
                     padding: EdgeInsets.only(top: 24.h, left: 24.w),
                     child: Text("What are you up to today?",
@@ -66,6 +161,8 @@ class HomePage extends StatelessWidget {
                       ],
                     ),
                   ),
+
+                  /// YOUR HABITS -----------------------------------
                   Padding(
                     padding: EdgeInsets.only(top: 4.h, left: 24.w),
                     child: Text(
@@ -79,14 +176,18 @@ class HomePage extends StatelessWidget {
                     child: Row(
                       children: [
                         const HabitItem(
-                            text: 'Goals',
-                            subText: '72% achieved',
-                            imageLink: Assets.imagesGoals),
+                          text: 'Goals',
+                          subText: '72% achieved',
+                          imageLink: Assets.imagesGoals,
+                          jumpTo: Goals(),
+                        ),
                         16.width,
-                        const HabitItem(
-                            text: "Nutrition",
-                            subText: "3 hours of fasting",
-                            imageLink: Assets.imagesNutrition),
+                        HabitItem(
+                          text: "Nutrition",
+                          subText: "3 hours of fasting",
+                          imageLink: Assets.imagesNutrition,
+                          jumpTo: Nutritions(),
+                        ),
                       ],
                     ),
                   ),
@@ -96,11 +197,13 @@ class HomePage extends StatelessWidget {
                     child: Row(
                       children: [
                         const HabitItem(
-                            text: 'Challenges',
-                            subText: '64% achieved',
-                            imageLink: Assets.imagesChallenges),
+                          text: 'Challenges',
+                          subText: '64% achieved',
+                          imageLink: Assets.imagesChallenges,
+                          jumpTo: Challenges(),
+                        ),
                         16.width,
-                        const SeeReports(),
+                        const SeeReports(jumpTo: Reports()),
                       ],
                     ),
                   ),
@@ -113,5 +216,3 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
-

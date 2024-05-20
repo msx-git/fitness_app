@@ -18,8 +18,8 @@ class Onboarding extends StatelessWidget {
       backgroundColor: AppColors.background,
       body: Column(
         children: [
-          SafeArea(child: 24.height),
-          Image.asset(Assets.imagesOnboarding),
+          // SafeArea(child: 24.height),
+          Image.asset(Assets.imagesOnboarding,height: 386.h,width: 375.w,fit: BoxFit.cover,),
           42.height,
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 24.w),

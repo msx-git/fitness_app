@@ -9,11 +9,23 @@ class TextStyles {
     fontSize: 34.sp,
     color: const Color(0xffFFFFFF),
   );
-  static TextStyle whiteHeadline2 = TextStyle(
+  static TextStyle whiteHeadlineSmall = TextStyle(
+    fontFamily: 'Jakarta',
+    fontWeight: FontWeight.w500,
+    fontSize: 11.sp,
+    color: AppColors.grey400,
+  );
+  static TextStyle whiteHeadline3 = TextStyle(
     fontFamily: 'Jakarta',
     fontWeight: FontWeight.w400,
     fontSize: 14.sp,
     color: const Color(0xffFFFFFF),
+  );
+  static TextStyle whiteHeadline4 = TextStyle(
+    fontFamily: 'Jakarta',
+    fontWeight: FontWeight.w600,
+    fontSize: 11.sp,
+    color: AppColors.grey150,
   );
   static TextStyle buttonText = TextStyle(
     fontFamily: 'Jakarta',

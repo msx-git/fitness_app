@@ -34,7 +34,7 @@ class PageViewItem extends StatelessWidget {
             child: Text(
               subHeadline,
               textAlign: TextAlign.center,
-              style: TextStyles.whiteHeadline2,
+              style: TextStyles.whiteHeadline3,
             ),
           ),
         ),

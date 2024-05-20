@@ -55,7 +55,7 @@ class _Step1State extends State<Step1> {
                         onPressed: () {
                           Navigator.of(context).push(
                             CupertinoPageRoute(
-                              builder: (context) => Step2(),
+                              builder: (context) => const Step2(),
                             ),
                           );
                         },
@@ -171,7 +171,7 @@ class _Step1State extends State<Step1> {
                   ? () {
                       Navigator.of(context).push(
                         CupertinoPageRoute(
-                          builder: (context) => Step2(),
+                          builder: (context) => const Step2(),
                         ),
                       );
                     }

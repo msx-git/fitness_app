@@ -6,22 +6,20 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../../constants/colors.dart';
 import '../../../constants/text_styles.dart';
 
-class TodayItem extends StatefulWidget {
-  const TodayItem(
+class ChallengeStatusItem extends StatefulWidget {
+  const ChallengeStatusItem(
       {super.key,
-      required this.title,
-      required this.iconLink,
-      this.isChosen = false});
+        required this.title,
+        this.isChosen = false});
 
   final String title;
-  final String iconLink;
   final bool isChosen;
 
   @override
-  State<TodayItem> createState() => _TodayItemState();
+  State<ChallengeStatusItem> createState() => _ChallengeStatusItemState();
 }
 
-class _TodayItemState extends State<TodayItem> {
+class _ChallengeStatusItemState extends State<ChallengeStatusItem> {
   late bool isSelected;
 
   @override
@@ -49,30 +47,21 @@ class _TodayItemState extends State<TodayItem> {
               color: const Color(0xff323247).withOpacity(0.02),
               blurRadius: 20.r,
               spreadRadius: -2,
-              offset: const Offset(0, -4),
+              offset: const Offset(0, 4),
             ),
             BoxShadow(
-              color: const Color(0xff0C1A4B).withOpacity(0.1),
-              blurRadius: 8.r,
+              color: const Color(0xff0C1A4B).withOpacity(0.04),
+              blurRadius: 5.r,
             ),
           ],
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SvgPicture.asset(
-              widget.iconLink,
-              color: isSelected ? AppColors.white : AppColors.grey600,
-              height: 25.h,
+        child: Center(
+          child: Text(
+            widget.title,
+            style: TextStyles.mainTextSemiBold.copyWith(
+              color: isSelected ? AppColors.white : AppColors.grey700,
             ),
-            8.height,
-            Text(
-              widget.title,
-              style: TextStyles.mainTextSemiBold.copyWith(
-                color: isSelected ? AppColors.white : AppColors.grey700,
-              ),
-            ),
-          ],
+          ),
         ),
       ),
     );
