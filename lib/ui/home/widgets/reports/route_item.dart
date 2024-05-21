@@ -27,11 +27,25 @@ class RouteItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(bottom: 16.h),
-      color: AppColors.white,
+      decoration: BoxDecoration(
+          color: AppColors.white,
+          borderRadius: BorderRadius.circular(14.r),
+          boxShadow: [
+            BoxShadow(
+              color: const Color(0xff323247).withOpacity(0.02),
+              blurRadius: 20.r,
+              spreadRadius: -2,
+              offset: const Offset(0, 4),
+            ),
+            BoxShadow(
+              color: const Color(0xff0C1A4B).withOpacity(0.05),
+              blurRadius: 5.r,
+            ),
+          ]),
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
       child: Row(
         children: [
-          SvgPicture.asset(routImage, height: 56.h),
+          SvgPicture.asset(routImage, width: 50.w),
           10.width,
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -46,14 +60,15 @@ class RouteItem extends StatelessWidget {
                 children: [
                   Container(
                     padding:
-                        EdgeInsets.symmetric(horizontal: 6.w, vertical: 4.h),
+                        EdgeInsets.symmetric(horizontal: 5.w, vertical: 4.h),
                     decoration: BoxDecoration(
                       border: Border.all(color: AppColors.grey150),
                       borderRadius: BorderRadius.circular(8.r),
                     ),
                     child: Row(
                       children: [
-                        SvgPicture.asset(Assets.iconsArrowDirection),
+                        SvgPicture.asset(Assets.iconsArrowDirection,
+                            width: 14.w),
                         SizedBox(width: 4.w),
                         Text(
                           km,
@@ -66,14 +81,14 @@ class RouteItem extends StatelessWidget {
                   5.width,
                   Container(
                     padding:
-                        EdgeInsets.symmetric(horizontal: 6.w, vertical: 4.h),
+                        EdgeInsets.symmetric(horizontal: 5.w, vertical: 4.h),
                     decoration: BoxDecoration(
                       border: Border.all(color: AppColors.grey150),
                       borderRadius: BorderRadius.circular(8.r),
                     ),
                     child: Row(
                       children: [
-                        SvgPicture.asset(Assets.iconsTrendingUp),
+                        SvgPicture.asset(Assets.iconsTrendingUp, width: 14.w),
                         SizedBox(width: 4.w),
                         Text(
                           m,
@@ -86,7 +101,7 @@ class RouteItem extends StatelessWidget {
                   5.width,
                   Container(
                     padding:
-                        EdgeInsets.symmetric(horizontal: 6.w, vertical: 4.h),
+                        EdgeInsets.symmetric(horizontal: 5.w, vertical: 4.h),
                     decoration: BoxDecoration(
                       border: Border.all(color: AppColors.grey150),
                       borderRadius: BorderRadius.circular(8.r),
@@ -94,7 +109,7 @@ class RouteItem extends StatelessWidget {
                     child: Row(
                       children: [
                         SvgPicture.asset(Assets.iconsTimer,
-                            color: AppColors.purple500),
+                            color: AppColors.purple500, width: 14.w),
                         SizedBox(width: 4.w),
                         Text(
                           hour,

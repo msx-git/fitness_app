@@ -59,7 +59,7 @@ class _Step3State extends State<Step3> {
                         onPressed: () {
                           Navigator.of(context).pushAndRemoveUntil(
                             CupertinoPageRoute(
-                              builder: (context) => const HomePage(),
+                              builder: (context) => HomePage(),
                             ),
                             (Route<dynamic> route) => route is HomePage,
                           );
@@ -171,7 +171,7 @@ class _Step3State extends State<Step3> {
                   ? () {
                       Navigator.of(context).pushAndRemoveUntil(
                         CupertinoPageRoute(
-                          builder: (context) => const HomePage(),
+                          builder: (context) => HomePage(),
                         ),
                         (Route<dynamic> route) => route is HomePage,
                       );

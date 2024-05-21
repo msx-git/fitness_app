@@ -273,7 +273,14 @@ class Nutritions extends StatelessWidget {
                       SvgPicture.asset(rationKcalImage),
 
                       SizedBox(width: 5.w),
-                      Text('$rationKcal kcal'),
+                      Text(
+                        '$rationKcal kcal',
+                        style: TextStyle(
+                          color: AppColors.grey600,
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
                     ],
                   ),
                 ),

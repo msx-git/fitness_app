@@ -63,7 +63,6 @@ class _Step2State extends State<Step2> {
                             ),
                           );
                         },
-
                         child: Text(
                           "Skip question",
                           style: TextStyles.mainTextSemiBold2

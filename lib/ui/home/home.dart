@@ -1,3 +1,4 @@
+import 'package:fitness_app/controllers/user_controller.dart';
 import 'package:fitness_app/ui/home/challenges.dart';
 import 'package:fitness_app/ui/home/goals.dart';
 import 'package:fitness_app/ui/home/nutritions.dart';
@@ -16,7 +17,9 @@ import 'widgets/see_reports.dart';
 import 'widgets/today_item.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  HomePage({super.key});
+
+  final userController = UserController();
 
   @override
   Widget build(BuildContext context) {
@@ -42,10 +45,24 @@ class HomePage extends StatelessWidget {
                     Image.asset(Assets.imagesThomas, height: 42.h),
                     12.width,
                     RichText(
-                      text: const TextSpan(
+                      text: TextSpan(
                         text: 'Hello,\n',
+                        style: TextStyle(
+                          fontFamily: 'Jakarta',
+                          fontWeight: FontWeight.w500,
+                          fontSize: 14.sp,
+                          color: AppColors.grey200,
+                        ),
                         children: [
-                          TextSpan(text: 'Thomas'),
+                          TextSpan(
+                            text: userController.signedUser.firstName,
+                            style: TextStyle(
+                              fontFamily: 'Jakarta',
+                              fontWeight: FontWeight.w700,
+                              fontSize: 16.sp,
+                              color: AppColors.white,
+                            ),
+                          ),
                         ],
                       ),
                     ),

@@ -108,9 +108,8 @@ class CyclingReports extends StatelessWidget {
                       style: TextStyles.mainTextBold2,
                     ),
                     const Spacer(),
-                    TextButton(
-                      onPressed: () {},
-                      child: Row(
+                    ZoomTapAnimation(
+                        child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Text(

@@ -41,7 +41,7 @@ class Onboarding extends StatelessWidget {
           const Spacer(),
           GestureDetector(
             onTap: () => Navigator.of(context).push(
-              CupertinoPageRoute(builder: (context) => Step1()),
+              CupertinoPageRoute(builder: (context) => const Step1()),
             ),
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 24.w),
@@ -55,7 +55,7 @@ class Onboarding extends StatelessWidget {
           10.height,
           TextButton(
             onPressed: () => Navigator.of(context).pushReplacement(
-              CupertinoPageRoute(builder: (context) => const HomePage()),
+              CupertinoPageRoute(builder: (context) => HomePage()),
             ),
             child: Text(
               'Skip for now',

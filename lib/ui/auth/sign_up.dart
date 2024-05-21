@@ -3,7 +3,6 @@ import 'package:fitness_app/constants/text_styles.dart';
 import 'package:fitness_app/generated/assets.dart';
 import 'package:fitness_app/models/user.dart';
 import 'package:fitness_app/ui/auth/sign_in.dart';
-import 'package:fitness_app/ui/auth/signed_in.dart';
 import 'package:fitness_app/ui/auth/widgets/action_button.dart';
 import 'package:fitness_app/ui/auth/widgets/custom_text_field.dart';
 import 'package:fitness_app/ui/auth/widgets/page_indicator.dart';

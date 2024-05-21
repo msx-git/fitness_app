@@ -1,4 +1,3 @@
-
 import 'package:fitness_app/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -9,11 +8,11 @@ import '../../../constants/text_styles.dart';
 class DashboardItem extends StatelessWidget {
   const DashboardItem(
       {super.key,
-        required this.title,
-        required this.amount,
-        required this.iconLink,
-        required this.iconColor,
-        required this.unit});
+      required this.title,
+      required this.amount,
+      required this.iconLink,
+      required this.iconColor,
+      required this.unit});
 
   final String title;
   final String amount;

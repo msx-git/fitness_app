@@ -5,8 +5,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../constants/colors.dart';
 import '../../../../constants/text_styles.dart';
 
-class CyclingImageItem extends StatelessWidget {
-  const CyclingImageItem(
+class YogaImageItem extends StatelessWidget {
+  const YogaImageItem(
       {super.key,
       required this.text1,
       required this.text2,
@@ -20,6 +20,7 @@ class CyclingImageItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
+      width: 140.w,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(12.r),
@@ -37,10 +38,9 @@ class CyclingImageItem extends StatelessWidget {
         ],
       ),
       child: Row(
-        mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SvgPicture.asset(iconLink, color: AppColors.grey600,width: 18.w),
+          SvgPicture.asset(iconLink, color: AppColors.grey600, width: 18.w),
           SizedBox(width: 6.w),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,

@@ -43,7 +43,7 @@ class SignedIn extends StatelessWidget {
           GestureDetector(
             onTap: () => Navigator.of(context).pushReplacement(
               CupertinoPageRoute(
-                builder: (context) => Onboarding(),
+                builder: (context) => const Onboarding(),
               ),
             ),
             child: Padding(

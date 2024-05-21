@@ -62,6 +62,7 @@ class Assets {
   static const String imagesCycleImage = 'assets/images/cycle_image.png';
   static const String imagesDinner = 'assets/images/dinner.png';
   static const String imagesDottedBackground = 'assets/images/dotted_background.svg';
+  static const String imagesEssentialYoga = 'assets/images/essential_yoga.png';
   static const String imagesFootball = 'assets/images/football.png';
   static const String imagesGoals = 'assets/images/goals.png';
   static const String imagesGoalsCardCircle = 'assets/images/goals_card_circle.png';
@@ -73,6 +74,7 @@ class Assets {
   static const String imagesJordan = 'assets/images/jordan.png';
   static const String imagesKkalLeft = 'assets/images/kkal_left.png';
   static const String imagesLunch = 'assets/images/lunch.png';
+  static const String imagesMorningYoga = 'assets/images/morning_yoga.png';
   static const String imagesMuhammadAli = 'assets/images/muhammad_ali.jpg';
   static const String imagesNutrition = 'assets/images/nutrition.png';
   static const String imagesOnboarding = 'assets/images/onboarding.png';
@@ -82,6 +84,7 @@ class Assets {
   static const String imagesThomas = 'assets/images/thomas.png';
   static const String imagesTom = 'assets/images/tom.jpg';
   static const String imagesValleyball = 'assets/images/valleyball.png';
+  static const String imagesYinYoga = 'assets/images/yin_yoga.png';
   static const String imagesYoga = 'assets/images/yoga.png';
 
 }

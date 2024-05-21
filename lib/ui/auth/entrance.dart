@@ -1,15 +1,26 @@
-import 'package:fitness_app/constants/colors.dart';
-import 'package:fitness_app/constants/text_styles.dart';
-import 'package:fitness_app/generated/assets.dart';
 import 'package:fitness_app/ui/auth/sign_in.dart';
-import 'package:fitness_app/ui/auth/sign_up.dart';
-import 'package:fitness_app/ui/auth/widgets/action_button.dart';
-import 'package:fitness_app/ui/auth/widgets/page_indicator.dart';
-import 'package:fitness_app/ui/auth/widgets/page_view_item.dart';
 import 'package:fitness_app/utils/extensions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../constants/colors.dart';
+import '../../constants/text_styles.dart';
+import '../../generated/assets.dart';
+import 'sign_up.dart';
+import 'widgets/action_button.dart';
+import 'widgets/page_indicator.dart';
+import 'widgets/page_view_item.dart';
+
+// import '/constants/colors.dart';
+// import '/constants/text_styles.dart';
+// import '/generated/assets.dart';
+// import '/ui/auth/sign_in.dart';
+// import '/ui/auth/sign_up.dart';
+// import '/ui/auth/widgets/action_button.dart';
+// import '/ui/auth/widgets/page_indicator.dart';
+// import '/ui/auth/widgets/page_view_item.dart';
+// import '/utils/extensions.dart';
 
 class Entrance extends StatelessWidget {
   Entrance({super.key});

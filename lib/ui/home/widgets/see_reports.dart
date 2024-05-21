@@ -1,7 +1,6 @@
 import 'package:fitness_app/generated/assets.dart';
 import 'package:fitness_app/utils/extensions.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -47,8 +46,8 @@ class SeeReports extends StatelessWidget {
           children: [
             Text(
               "Daily Reports",
-              style:
-                  TextStyles.mainTextSemiBold2.copyWith(color: AppColors.grey800),
+              style: TextStyles.mainTextSemiBold2
+                  .copyWith(color: AppColors.grey800),
             ),
             4.height,
             Text(
