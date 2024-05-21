@@ -84,23 +84,21 @@ class Nutritions extends StatelessWidget {
                         ],
                       ),
                     ),
-                    SizedBox(
-                      height: 190.h,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          containerMeatAndBurner(
-                            imagePath: Assets.iconsMeat,
-                            kcal: '215 kcal',
-                            type: 'Eaten',
-                          ),
-                          containerMeatAndBurner(
-                            imagePath: Assets.iconsCalories,
-                            kcal: '150 kcal',
-                            type: 'Calories Burned',
-                          ),
-                        ],
-                      ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        containerMeatAndBurner(
+                          imagePath: Assets.iconsMeat,
+                          kcal: '215 kcal',
+                          type: 'Eaten',
+                        ),
+                        12.height,
+                        containerMeatAndBurner(
+                          imagePath: Assets.iconsCalories,
+                          kcal: '150 kcal',
+                          type: 'Calories Burned',
+                        ),
+                      ],
                     )
                   ],
                 ),
@@ -167,6 +165,7 @@ class Nutritions extends StatelessWidget {
     required String type,
   }) {
     return Container(
+      clipBehavior: Clip.hardEdge,
       width: 159.w,
       padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 17.5.h),
       decoration: BoxDecoration(
@@ -199,7 +198,17 @@ class Nutritions extends StatelessWidget {
                     .copyWith(color: AppColors.grey800),
               ),
               SizedBox(height: 6.h),
-              Text(type, style: TextStyles.mainTextMedium),
+              SizedBox(
+                width: 107.w,
+                child: FittedBox(
+                  alignment: Alignment.centerLeft,
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    type,
+                    style: TextStyles.mainTextMedium.copyWith(fontSize: 14.sp),
+                  ),
+                ),
+              ),
             ],
           )
         ],

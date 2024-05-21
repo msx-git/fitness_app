@@ -15,7 +15,7 @@ dependencies:
   flutter_svg: ^2.0.10+1
   smooth_page_indicator: ^1.1.0
   device_preview: ^1.1.0
-  appinio_swiper: ^2.1.1
+  zoom_tap_animation: ^1.1.0
 
 dev_dependencies:
   flutter_test:

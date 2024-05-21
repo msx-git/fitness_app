@@ -56,7 +56,10 @@ class Assets {
   static const String imagesBasketball = 'assets/images/basketball.png';
   static const String imagesBreakfast = 'assets/images/breakfast.png';
   static const String imagesChallangersBanner = 'assets/images/challangers_banner.png';
+  static const String imagesChallengersStack1 = 'assets/images/challengers_stack_1.png';
+  static const String imagesChallengersStack2 = 'assets/images/challengers_stack_2.png';
   static const String imagesChallenges = 'assets/images/challenges.png';
+  static const String imagesCycleImage = 'assets/images/cycle_image.png';
   static const String imagesDinner = 'assets/images/dinner.png';
   static const String imagesDottedBackground = 'assets/images/dotted_background.svg';
   static const String imagesFootball = 'assets/images/football.png';
