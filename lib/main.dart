@@ -1,6 +1,7 @@
-import 'package:fitness_app/ui/home/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'ui/onboarding/onboarding.dart';
 
 void main() {
   runApp(
@@ -14,11 +15,11 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      designSize: const Size(375, 812),
+    return const ScreenUtilInit(
+      designSize: Size(375, 812),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: HomePage(),
+        home: Onboarding(),
       ),
     );
   }
