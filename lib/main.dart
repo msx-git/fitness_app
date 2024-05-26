@@ -1,14 +1,10 @@
-import 'package:device_preview/device_preview.dart';
-import 'package:fitness_app/ui/auth/entrance.dart';
+import 'package:fitness_app/ui/home/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
   runApp(
-    DevicePreview(
-      enabled: false,
-      builder: (context) => const MyApp(), // Wrap your app
-    ),
+    const MyApp(),
   );
 }
 
@@ -21,10 +17,8 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(375, 812),
       child: MaterialApp(
-        builder: DevicePreview.appBuilder,
-        useInheritedMediaQuery: true,
         debugShowCheckedModeBanner: false,
-        home: Entrance(),
+        home: HomePage(),
       ),
     );
   }
